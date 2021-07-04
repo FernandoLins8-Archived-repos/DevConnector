@@ -1,11 +1,15 @@
 import mongoose from 'mongoose'
 import config from 'config'
 
-const db = config.get('mongoURI')
+const db = config.get('mongoURI') as string
 
 const connectDB = async () => {
   try {
-    await mongoose.connect(db, { useNewUrlParser: true, useUnifiedTopology: true })
+    await mongoose.connect(db, { 
+      useNewUrlParser: true, 
+      useUnifiedTopology: true,
+      useCreateIndex: true
+     })
     console.log('MongoDB Connected')
     
   } catch (err) {
