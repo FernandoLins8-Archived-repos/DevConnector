@@ -9,7 +9,8 @@ interface IProfile {
   skills: [string]
   bio: string
   githubusername: string
-  experience: {
+  experience: [{
+    _id?: string
     title: string
     company: string
     location: string
@@ -17,8 +18,9 @@ interface IProfile {
     to: Date
     current: Boolean
     description: string
-  }
-  education: {
+  }]
+  education: [{
+    _id?: string
     school: string
     degree: string
     fieldofstudy: string
@@ -26,7 +28,7 @@ interface IProfile {
     to: Date
     current: Boolean
     description: string
-  }
+  }]
   social: {
     youtube: string
     twitter: string
