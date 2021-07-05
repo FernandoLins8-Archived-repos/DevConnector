@@ -1,4 +1,4 @@
-import { Schema, model, Document } from 'mongoose'
+import { Schema, model } from 'mongoose'
 
 interface IUser {
   name: string
