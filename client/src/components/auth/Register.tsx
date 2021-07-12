@@ -19,10 +19,14 @@ const Register = () => {
 
   async function handleFormSubmit(e: FormEvent) {
     e.preventDefault()
-    setFormData({ ...formData })
 
     if(password !== password2) {
       alert('Passwords do not match')
+      setFormData({
+        ...formData,
+        password: '',
+        password2: ''
+      })
     } else {
       const newUser = {
         name,
@@ -67,6 +71,7 @@ const Register = () => {
             name="name"
             placeholder="Name" 
             required 
+            value={name}
             onChange={handleInputChange}
           />
         </div>
@@ -88,6 +93,7 @@ const Register = () => {
             name="password"
             minLength={6}
             placeholder="Password"
+            value={password}
             onChange={handleInputChange}
           />
         </div>
@@ -97,6 +103,7 @@ const Register = () => {
             name="password2"
             minLength={6}
             placeholder="Confirm Password"
+            value={password2}
             onChange={handleInputChange}
           />
         </div>
